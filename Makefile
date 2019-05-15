@@ -5,8 +5,8 @@ build:
 # 	docker run -d -P --name my_ubuntu myubuntu:0.1
 # 	ssh -X -p $$(docker port my_ubuntu 22 | cut -d: -f2) root@localhost
 
-run_user:
-	docker run -P --name my_ubuntu myubuntu:0.1 bash
+run:
+	docker run -tiP --name my_ubuntu myubuntu:0.1 bash
 	# $ docker run -P --name my_ubuntu myubuntu:0.1 bash
 	# In the container,
 	# $ sudo /etc/init.d/ssh start
