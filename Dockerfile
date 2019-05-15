@@ -59,4 +59,4 @@ RUN conda install jupyter notebook bokeh -y
 RUN conda install -c rdkit rdkit -y
 RUN conda install -c omnia pdbfixer -y
 RUN conda install -c conda-forge py3dmol -y
-RUN conda install -c conda-forge aspw -y
+RUN conda install -c conda-forge apsw -y
