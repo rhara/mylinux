@@ -29,7 +29,7 @@ RUN echo 'root:password' | chpasswd
 RUN echo 'rhara:password' | chpasswd
 
 RUN mkdir /home/rhara/.ssh
-COPY id_rsa.pub /home/rhara/.ssh/authorized_keys
+COPY authorized_keys /home/rhara/.ssh/authorized_keys
 RUN chmod 600 /home/rhara/.ssh/authorized_keys
 RUN chown -R rhara:users /home/rhara/.ssh
 
