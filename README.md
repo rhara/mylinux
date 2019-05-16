@@ -10,7 +10,8 @@ $ docker exec -ti my_ubuntu bash
 
 In the container,
 ```
-# /etc/init.d/ssh start
+# /etc/init.d/ssh start (Ubuntu)
+# systemctl start sshd.service (CentOS)
 ```
 
 You can now detach this container.

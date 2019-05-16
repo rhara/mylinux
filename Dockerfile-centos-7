@@ -64,17 +64,20 @@ RUN conda upgrade -y --all -n base -c default && \
         scikit-learn \
         pandas \
         scikit-image \
+        matplotlib \
+        joblib \
         jupyter \
         notebook \
         bokeh \
         ujson \
-        tqdm && \
+        tqdm \
+        biopython && \
     conda install -y -c rdkit rdkit && \
     conda install -y -c omnia pdbfixer && \
     conda install -y -c conda-forge \
         py3dmol \
         apsw
-RUN pip install -y prody mmpdb
+RUN pip install -U prody mmpdb mordred
 
 
 USER root
