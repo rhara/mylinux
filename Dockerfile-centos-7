@@ -5,7 +5,7 @@ RUN yum repolist all
 RUN yum -y install epel-release
 RUN yum-config-manager --enable epel
 RUN yum -y groupinstall "Development Tools"
-RUN yum -y install zsh vim wget net-tools lsof xauth libxrender-devel gimp sudo zstd
+RUN yum -y install zsh vim wget net-tools lsof xauth libxrender-devel gimp sudo zstd openssh-server
 
 RUN mkdir /run/sshd
 
@@ -60,3 +60,7 @@ RUN conda upgrade -y --all -n base -c default && \
     conda install -y -c conda-forge \
         py3dmol \
         apsw
+
+USER root
+WORKDIR /root
+

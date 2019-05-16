@@ -14,7 +14,16 @@ run-ubuntu:
 	# This terminal is X-enabled!!
 
 run-centos:
-	docker run -tiP --name my_centos mycentos:0.1 bash
+	docker run -dP --privileged --name my_centos mycentos:0.1 /sbin/init
+	# docker exec -ti my_centos bash
+	# In the container,
+	# # systemctl start sshd.service
+	# From another terminal,
+	# check the port number
+	# $ docker port my_centos
+	# ssh -X -p <#port> rhara@localhost
+	# This terminal is X-enabled!!
+
 
 clean:
 	docker rm -f $$(docker ps -qa) || exit 0
