@@ -16,7 +16,7 @@ RUN yum -y update && \
         gimp \
         sudo \
         zstd \
-        openssh-server &&
+        openssh-server && \
     yum -y clean all
 
 RUN mkdir /run/sshd
