@@ -32,6 +32,8 @@ RUN mkdir /home/rhara/.ssh
 COPY authorized_keys /home/rhara/.ssh/authorized_keys
 RUN chmod 600 /home/rhara/.ssh/authorized_keys
 RUN chown -R rhara:users /home/rhara/.ssh
+COPY zshrc /home/rhara/.zshrc
+RUN chown rhara:users /home/rhara/.zshrc
 
 EXPOSE 22
 
@@ -47,7 +49,7 @@ ENV PATH $CONDA_BASE_PREFIX/bin:$CONDA_BASE_PREFIX/condabin:$PATH
 RUN conda create -n chem36 python=3.6 -y
 
 ENV PATH $CONDA_BASE_PREFIX/envs/chem36/bin:$PATH
-ENV CONDA_EXE $CONDA_BASE_PREFIX/bin/python
+ENV CONDA_EXE $CONDA_BASE_PREFIX/bin/conda
 ENV CONDA_PYTHON_EXE $CONDA_BASE_PREFIX/bin/python
 ENV CONDA_SHLVL=1
 ENV CONDA_PREFIX $CONDA_BASE_PREFIX/envs/chem36
@@ -72,7 +74,8 @@ RUN conda upgrade -y --all -n base -c default && \
     conda install -y -c conda-forge \
         py3dmol \
         apsw
+RUN pip install -y prody mmpdb
+
 
 USER root
 WORKDIR /root
-
