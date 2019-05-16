@@ -1,11 +1,10 @@
-build:
-	docker build -t myubuntu:0.1 .
+build-ubuntu:
+	docker build -t myubuntu:0.1 -f Dockerfile-ubuntu-18.04 .
 
-# run:
-# 	docker run -d -P --name my_ubuntu myubuntu:0.1
-# 	ssh -X -p $$(docker port my_ubuntu 22 | cut -d: -f2) root@localhost
+build-centos:
+	docker build -t mycentos:0.1 -f Dockerfile-centos-7 .
 
-run:
+run-ubuntu:
 	docker run -tiP --name my_ubuntu myubuntu:0.1 bash
 	# $ docker run -P --name my_ubuntu myubuntu:0.1 bash
 	# In the container,
@@ -13,6 +12,9 @@ run:
 	# From another terminal,
 	# $ ssh -X -p $$(docker port my_ubuntu 22 | cut -d: -f2) localhost
 	# This terminal is X-enabled!!
+
+run-centos:
+	docker run -tiP --name my_centos mycentos:0.1 bash
 
 clean:
 	docker rm -f $$(docker ps -qa) || exit 0
