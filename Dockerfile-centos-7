@@ -1,11 +1,23 @@
 FROM centos:7
 
-RUN yum -y update
-RUN yum repolist all
-RUN yum -y install epel-release
-RUN yum-config-manager --enable epel
-RUN yum -y groupinstall "Development Tools"
-RUN yum -y install zsh vim wget net-tools lsof xauth libxrender-devel gimp sudo zstd openssh-server
+RUN yum -y update && \
+    yum repolist all && \
+    yum -y install epel-release && \
+    yum-config-manager --enable epel && \
+    yum -y groupinstall "Development Tools" && \
+    yum -y install \
+        zsh \
+        vim \
+        wget \
+        net-tools \
+        lsof \
+        xauth \
+        libxrender-devel \
+        gimp \
+        sudo \
+        zstd \
+        openssh-server &&
+    yum -y clean all
 
 RUN mkdir /run/sshd
 

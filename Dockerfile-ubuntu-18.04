@@ -83,3 +83,6 @@ RUN conda upgrade -y --all -n base -c default && \
     conda install -y -c conda-forge \
         py3dmol \
         apsw
+
+USER root
+WORKDIR /root
