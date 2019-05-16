@@ -25,6 +25,7 @@ RUN apt-get update && \
         emacs \
         libxrender-dev \
         x11-apps \
+	vim \
         gimp \
         zsh && \
     rm -rf /var/lib/apt/lists/*
