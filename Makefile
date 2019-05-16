@@ -17,5 +17,11 @@ run-centos:
 
 
 clean:
-	docker rm -f $$(docker ps -qa) || exit 0
-	docker rmi $$(docker images | grep '<none>' | awk '{print $$3}')
+	NN=$$(docker ps -qa) ; \
+	if [ -n "$$NN" ] ; then \
+		docker rm -f $$NN ; \
+	fi
+	NN=$$(docker images | grep '<none>' | awk '{print $$3}') ; \
+	if [ -n "$$NN" ] ; then \
+		docker rmi $$NN ; \
+	fi
