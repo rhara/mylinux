@@ -82,3 +82,5 @@ RUN pip install -U prody mmpdb mordred
 
 USER root
 WORKDIR /root
+
+RUN yum -y install emacs
