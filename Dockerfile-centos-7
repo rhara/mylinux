@@ -7,6 +7,7 @@ RUN yum -y update && \
     yum -y groupinstall "Development Tools" && \
     yum -y install \
         zsh \
+	csh \
         vim \
         wget \
         net-tools \
@@ -16,7 +17,8 @@ RUN yum -y update && \
         gimp \
         sudo \
         zstd \
-        openssh-server && \
+        openssh-server \
+	mesa-libGLU && \
     yum -y clean all
 
 RUN mkdir /run/sshd
