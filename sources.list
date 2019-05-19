@@ -10,4 +10,4 @@ deb http://jp.archive.ubuntu.com/ubuntu/ bionic-backports main restricted univer
 #deb-src http://jp.archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse
 #deb-src http://jp.archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe multiverse
 #deb-src http://jp.archive.ubuntu.com/ubuntu/ bionic-proposed main restricted universe multiverse
-#deb-src http://jp.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse 
+#deb-src http://jp.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
