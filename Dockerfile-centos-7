@@ -7,8 +7,9 @@ RUN yum -y update && \
     yum -y groupinstall "Development Tools" && \
     yum -y install \
         zsh \
-	csh \
+        csh \
         vim \
+        emacs \
         wget \
         net-tools \
         lsof \
@@ -18,7 +19,7 @@ RUN yum -y update && \
         sudo \
         zstd \
         openssh-server \
-	mesa-libGLU && \
+        mesa-libGLU && \
     yum -y clean all
 
 RUN mkdir /run/sshd
@@ -84,5 +85,3 @@ RUN pip install -U prody mmpdb mordred
 
 USER root
 WORKDIR /root
-
-RUN yum -y install emacs
